@@ -6,17 +6,17 @@
 
 ## Philosophy
 
-Everything will run on Laptop, home-lab is a backup and services only. If the Laptop dies I will rebuild it with **Forgejo**, **Ansible** and **Chezmoi**.			
-	- *Forgejo* is self hosted lightweight software for managing and collaborating on software projects using Git control system. 
- 	- *Ansible* is an open-source automation tool that simplifies IT tasks such as configuration managenmnet, aplication deployment and orchestration, it allows users to automate repetitive tasks.
-	- *Chezmoi* is a dotfile manager that helps in managing personal configuration files across multiple mmachines securely. Makes consistent handling differences between systems and managing secrets.
+> Everything will run on Laptop, home-lab is a backup and services only. If the Laptop dies I will rebuild it with **Forgejo**, **Ansible** and **Chezmoi**.			
+- *Forgejo* is self hosted lightweight software for managing and collaborating on software projects using Git control system. 
+- *Ansible* is an open-source automation tool that simplifies IT tasks such as configuration managenmnet, aplication deployment and orchestration, it allows users to automate repetitive tasks.
+- *Chezmoi* is a dotfile manager that helps in managing personal configuration files across multiple mmachines securely. Makes consistent handling differences between systems and managing secrets.
 
 ## Hardware
 
-1: *Workstation* Debian 12 Laptop - bare metal main workstation
-2: *Home-Lab* Always local server - backup and services **(Network Level restictions)**
-3: *Second workstation* Debian Trixie build
-4: *Third workstation* High-Spec desktop workstation **Windows** based
+1: *Workstation* Debian 12 Laptop - bare metal main workstation    
+2: *Home-Lab* Always local server - backup and services **(Network Level restictions)**   
+3: *Second workstation* Debian Trixie build    
+4: *Third workstation* High-Spec desktop workstation **Windows** based    
 
 
 
@@ -43,31 +43,30 @@ Everything will run on Laptop, home-lab is a backup and services only. If the La
 
 Three completely isolated network, not separated by firewall rules, separated by routing, a compromised zone cannot reach another zone.		
 
-![Debian Laptop](/home/sava/lab/work/sites/debian-workstation-system.png)
+![Debian Laptop](./img/debian-workstation-system.png)
 
-# DEBIAN: SYSTEM OVERVIEW
+<h3 align="center">DEBIAN: SYSTEM OVERVIEW</h3>
+
 
 | Layer | Component | Description | Security Level |
 |------|----------|------------|---------------|
 | Host | Debian (Bare Metal) | Main OS - virtualization, containers and network control |  Highest |
 
----
 
-## A: Personal Work
+<h3 align="center">A: Personal Work</h3>
 
 | Type | Component | Description | Rules |
 |------|----------|------------|------|
 | VM | Production VM | Stable working environment | Never exposed and private only |
-| Container 1 | Python Development | Scripts, automation, pipelines | No external access |
-| Container 2 | Real Estate Tools | GIS, data processing tools | Local use only |
-| Container 3 | Hugo Sites | Static site generation | Deploy only from controled environment |
-| # | # | # | # |
+| C1 | Python Development | Scripts, automation, pipelines | No external access |
+| C2 | Real Estate Tools | GIS, data processing tools | Local use only |
+| C3 | Hugo Sites | Static site generation | Deploy only from controled environment |
+| / | / | / | / |
 | VM | Testing VM | Experimentation environment | No sensitive data |
-| Container 1 | Sandbox + Experiments | Testing new tools/code | Disposable |
+| C1 | Sandbox + Experiments | Testing new tools/code | Disposable |
 
----
 
-## B: Collaborative (System B)
+<h3 align="center">B: Collaborative (System B)</h3>
 
 | Type | Component | Description | Rules |
 |------|----------|------------|------|
@@ -76,9 +75,8 @@ Three completely isolated network, not separated by firewall rules, separated by
 | Security | Dedicated SSH Key | Used only inside this VM | Never reused elsewhere |
 | Policy | Isolation Rule | No access to "A" | Strict separation |
 
----
 
-## C: Security Lab
+<h3 align="center">C: Security Lab<h3>
 
 | Type | Component | Description | Rules |
 |------|----------|------------|------|
@@ -90,9 +88,8 @@ Three completely isolated network, not separated by firewall rules, separated by
 | VM | Pentest VM | Security testing environment | Local home-lab testing only |
 | Policy | Network Isolation | No route to "A" or "B" | Full isolation |
 
----
 
-## HOMELAB: Local Network (Always On)
+<h3 align="center">HOMELAB: Local Network (Always On)<h3>
 
 | Type | Component | Description | Purpose |
 |------|----------|------------|--------|
@@ -101,9 +98,9 @@ Three completely isolated network, not separated by firewall rules, separated by
 | Service | Woodpecker CI | CI/CD automation | Deployment pipeline |
 | Service | K3s | Lightweight Kubernetes | Service orchestration |
 
----
 
-## SECURITY MODEL SUMMARY
+
+<h3 align="center">SECURITY MODEL SUMMARY<h3>
 
 | Principle | Description |
 |----------|------------|
@@ -114,9 +111,7 @@ Three completely isolated network, not separated by firewall rules, separated by
 | Controlled Networking | All risky traffic routed |
 
 
----
-
-| | Network Isolation | |
+| # | Network Isolation | # |
 |---|---|---|
 | network-a |    10.10.1.0/24 |   Production work |
 | network-b |   10.10.2.0/24 |   Bridge VM only |
@@ -124,18 +119,17 @@ Three completely isolated network, not separated by firewall rules, separated by
 | homelab-network |  192.168.x.0/24 |  Local network |
 
 
----
-
 ## Directory Structure 
-### ~/lab/
+
+***~/lab/***   
 
 - Single root directory. 
 - Everything version controlled.
 - Infrastructure, dotfiles, work.
 
 
-## Infrastructure (`infra/`)
-*Private Git repo (Forgejo)*
+<h3 align="center">Infrastructure (`infra/`)<h3>
+<p align="center">*Private Git repo (Forgejo)*</p>
 
 | Path | Description |
 |------|------------|
@@ -152,10 +146,11 @@ Three completely isolated network, not separated by firewall rules, separated by
 | infra/ssh/start-container.sh | Script to start containers |
 | infra/ssh/config.template | SSH config template |
 
----
 
-## Dotfiles (`dotfiles/`)
-*Private Git repo (Forgejo)*
+
+<h3 align=center>Dotfiles (`dotfiles/`)<h3>
+
+<p align="center">*Private Git repo (Forgejo)*</p>
 
 | Path | Description |
 |------|------------|
@@ -165,12 +160,12 @@ Three completely isolated network, not separated by firewall rules, separated by
 | dotfiles/git/ | Git configuration |
 | dotfiles/tools/ | CLI tools setup |
 
----
 
-## Work (`work/`)
-*Multiple Git repos*
+<h3 align="center">Work (`work/`)</h3>
 
-### Python
+<p align="center">*Multiple Git repos*</p>
+
+<h3 align="center">Python</h3>
 
 | Path | Description |
 |------|------------|
@@ -180,7 +175,7 @@ Three completely isolated network, not separated by firewall rules, separated by
 | work/python/real-estate/automation/ | Automation scripts |
 | work/python/experiments/ | Random experiments |
 
-### Sites
+<h3 align="center">Sites</h3>
 
 | Path | Description |
 |------|------------|
@@ -189,7 +184,7 @@ Three completely isolated network, not separated by firewall rules, separated by
 | work/sites/learn/ | Learning content |
 | work/sites/opensource/ | Open source projects |
 
-### Scripts
+<h3 align="center">Scripts</h3>
 
 | Path | Description |
 |------|------------|
@@ -197,16 +192,16 @@ Three completely isolated network, not separated by firewall rules, separated by
 | work/scripts/utils/ | General utilities |
 | work/scripts/realestate/ | Real estate tools |
 
-### Creative
+<h3 align="center">Creative</h3>
 
 | Path | Description |
 |------|------------|
 | work/creative/ | Design, 3D, experiments |
 
----
 
-## 🧠 Notes (`notes/`)
-*Private Git repo (Forgejo)*
+<h3 align="center">Notes (`notes/`)</h3>
+
+<p align="center">*Private Git repo (Forgejo)*</h3>
 
 | Path | Description |
 |------|------------|
@@ -220,9 +215,8 @@ Three completely isolated network, not separated by firewall rules, separated by
 | notes/diagrams/drawio/ | Draw.io diagrams |
 | notes/diagrams/generated/ | Auto-generated diagrams |
 
----
 
-## Resources (`resources/`)
+<h2 align="center">Resources (`resources/`)</h2>
 
 | Path | Description |
 |------|------------|
@@ -233,9 +227,8 @@ Three completely isolated network, not separated by firewall rules, separated by
 | resources/math/ | Math resources |
 | resources/business/ | Business materials |
 
----
 
-## 🔑 STRUCTURE SUMMARY
+<h2 align="center">STRUCTURE SUMMARY</h2>
 
 | Area | Purpose |
 |------|--------|
@@ -245,18 +238,21 @@ Three completely isolated network, not separated by firewall rules, separated by
 | notes | Knowledge base |
 | resources | Learning materials |
 
----
+<h3 align="center">SSH Auto-Start System</h3>
 
-## SSH Auto-Start System
+Bare metal reaches any VM or container with one command. VMs and containers start automatically on connection if stopped.   
 
-- Bare metal reaches any VM or container with one command. VMs and containers start automatically on connection if stopped.
 
 ```bash
 ssh production-vm     # starts VM if stopped and connects
 ssh container-python  # 13 May 2026 - containers are not still setup to work with this system
 ```
 
-Script: ~/lab/infra/ssh/start-container.sh takes 8 arguments:				
+---
+
+Script: ~/lab/infra/ssh/start-container.sh takes 8 arguments:   
+
+---
 
 ```bash
 $1  VM_NAME          libvirt VM name
@@ -269,14 +265,16 @@ $7  CONTAINER_IP     container IP address
 $8  CONTAINER_PORT   container SSH port
 ```
 
-1. Check VM state with virsh domstate
-2. Start VM if not running with virsh start
-3. Wait for SSH port with nc loop (max 30 attempts)
-
-For containers inside VMs this script is not yet setup.		
+1. Check VM state with virsh domstate   
+2. Start VM if not running with virsh start   
+3. Wait for SSH port with nc loop (max 30 attempts)   
 
 
-|| Virtualization ||
+***For containers inside VMs this script is not yet setup.***  
+
+
+
+|#| Virtualization |#|
 |---|---|---|
 | Hypervisor |    KVM/QEMU via libvirt |
 | VM management |  virsh (Terminal) |
@@ -290,7 +288,7 @@ VM user access to libvirt (no sudo needed):
 usermod -aG libvirt username
 ```
 
-### Rebuild Procedure — Under 2 Hours
+### Rebuild Procedure
 
 If laptop is destroyed or replaced:
 
@@ -327,23 +325,23 @@ Documentation:    Hugo serves sites at localhost
                   no internet required
 ```
 
-### Tools
+<h3 align="center">Tools</h3>
 
-Editor:         Nano + Neovim with lazy.nvim
-Terminal mux:   Tmux with tmux-resurrect
-Shell:          Bash **configured, aliased**
-Dotfiles:       Chezmoi **deploy anywhere in minutes**
-Version		Git **daily commits, real history**
-IaC:            Ansible
-Containers:     Incus **profiles, fast provisioning**
-K8s:            K3s on homelab **(in progress)**
-Sync:           Syncthing **peer-to-peer, no cloud**
-VPN:            WireGuard in NetVM
-Monitoring:     Prometheus + Grafana **(planned)**
-Cloud:		Oracle **free tier**
+Editor:         Nano + Neovim with lazy.nvim   
+Terminal mux:   Tmux with tmux-resurrect   
+Shell:          Bash **configured, aliased**   
+Dotfiles:       Chezmoi **deploy anywhere**   
+Version		Git **daily commits, real history**   
+IaC:            Ansible   
+Containers:     Incus **profiles, fast provisioning**   
+K8s:            K3s on homelab **(in progress)**   
+Sync:           Syncthing **peer-to-peer, no cloud**   
+VPN:            WireGuard in NetVM   
+Monitoring:     Prometheus + Grafana **(planned)**   
+Cloud:		Oracle **free tier**   
 
 
-### Security
+<h2 align="center">Security</h2>
 
 1. Zone separation is routing and not firewall rules
 2. Bridge VM has zero credentials to "A"
