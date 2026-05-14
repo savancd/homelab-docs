@@ -211,6 +211,17 @@ Three completely isolated network, not separated by firewall rules, separated by
 | work/creative/ | Design, 3D, experiments |
 
 
+<h3 align="center">Work Searching</h3>
+
+| Path | Desctiption |
+|---|---|
+| applications.ods | main fail (LibreOffice Calc) |
+| proposals.ods | different platforms work proposals |
+| contacts.ods | people contacts |
+| clients.ods | active and past clients |
+| work/notes/ | notes per company/client |
+
+
 <h3 align="center">Notes (`notes/`)</h3>
 
 <p align="center">*Private Git repo (Forgejo)*</h3>
