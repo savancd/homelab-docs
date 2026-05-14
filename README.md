@@ -23,8 +23,8 @@
 || Building status ||
 |---|---|---|
 | Phase 1 | Laptop Structure | Complete |
-| Phase 2 |  SSH and Machine Access | In Progress |
-| Phase 3 |  Bridge VM (System B) | Next |
+| Phase 2 |  SSH and Machine Access | Complete |
+| Phase 3 |  Bridge VM (System B) | In-Progress |
 | Phase 3b |  Security Lab |  Planned |
 | Phase 4 |  Windows Integration |  Planned |
 | Phase 5 | Content Production |  Planned |
@@ -165,6 +165,18 @@ Three completely isolated network, not separated by firewall rules, separated by
 
 <p align="center">*Multiple Git repos*</p>
 
+
+
+<h3 align="center">vm-storage<h3>
+
+| Path | Description |
+|---|---|
+| vm-storage/disks/    | VM qcow2 disk images |
+| vm-storage/snapshots/  | VM snapshots |
+| vm-storage/backups/    | VM backups to homelab |
+
+
+
 <h3 align="center">Python</h3>
 
 | Path | Description |
@@ -234,6 +246,7 @@ Three completely isolated network, not separated by firewall rules, separated by
 |------|--------|
 | infra | System automation & provisioning |
 | dotfiles | Personal environment config |
+| vm-storage | Dedicated directory for VM storage |
 | work | Active projects & development |
 | notes | Knowledge base |
 | resources | Learning materials |
