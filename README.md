@@ -24,8 +24,8 @@
 |---|---|---|
 | Phase 1 | Laptop Structure | Complete |
 | Phase 2 |  SSH and Machine Access | Complete |
-| Phase 3 |  Bridge VM (System B) | In-Progress |
-| Phase 3b |  Security Lab |  Planned |
+| Phase 3 |  Bridge VM (System B) | Complete |
+| Phase 3b |  Security Lab |  In Progress |
 | Phase 4 |  Windows Integration |  Planned |
 | Phase 5 | Content Production |  Planned |
 | Phase 6 |  Editor and Workspace |  Planned |
