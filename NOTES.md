@@ -12,3 +12,7 @@ Phase 3b - Security Lab:
 - Email VM - next to do
 - Analisys VM - next to do
 - Testing security of the home-lab VM
+
+
+
+- OBS Setup with multiple cameras for Live streaming setup.
