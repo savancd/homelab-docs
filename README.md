@@ -116,7 +116,7 @@ Three completely isolated network, not separated by firewall rules, separated by
 | network-a |    10.10.1.0/24 |   Production work |
 | network-b |   10.10.2.0/24 |   Bridge VM only |
 | network-c |   10.10.3.0/24 |   Security lab |
-| homelab-network |  192.168.x.0/24 |  Local network |
+| homelab-network |  XXX.XXX.x.0/24 |  Local network |
 
 
 ## Directory Structure 
