@@ -145,7 +145,7 @@ Three completely isolated network, not separated by firewall rules, separated by
 | infra/incus/images/ | Base container images |
 | infra/ssh/start-container.sh | Script to start containers |
 | infra/ssh/config.template | SSH config template |
-
+| infra/ssh/vpn/ | config files |
 
 
 <h3 align=center>Dotfiles (`dotfiles/`)<h3>
