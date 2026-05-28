@@ -89,6 +89,12 @@ Three completely isolated network, not separated by firewall rules, separated by
 | Policy | Network Isolation | No route to "A" or "B" | Full isolation |
 
 
+1: Net Vm starts before any other network C VM
+2: All network goes through Net VM only
+
+
+
+
 <h3 align="center">HOMELAB: Local Network (Always On)<h3>
 
 | Type | Component | Description | Purpose |
