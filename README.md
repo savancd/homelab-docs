@@ -25,19 +25,18 @@
 | Phase 1 | Laptop Structure | Complete |
 | Phase 2 |  SSH and Machine Access | Complete |
 | Phase 3 |  Bridge VM (System B) | Complete |
-| Phase 3b |  Security Lab |  In Progress | 
-| Phase 4 |  Windows Integration |  Planned |
-| Phase 5 | Content Production |  Planned |
-| Phase 6 |  Editor and Workspace |  Planned |
-| Phase 7 |  Personal Obsidian |  Planned |
-| Phase 8 | Visual Documentation | Planned |
-| Phase 9 | Offline ability | Planned |
-| Phase 10 | Homelab Foundation |  Planned |
-| Phase 11 |  Automated Deployment | Planned |
-| Phase 12 | Ansible Automation |  Planned |
-| Phase 13 | Incus Profiles | Planned |
-| Phase 14 | K3s on Homelab | Planned |
-
+| Phase 3b |  Security Lab |  Complete | 
+| Phase 4 |  Windows Integration |  Partialy done  |
+| Phase 5 |  Editor and Workspace |  In progress |
+| Phase 6 |  Personal Obsidian |  Planned |
+| Phase 7 | Visual Documentation | Planned |
+| Phase 8 | Offline ability | Planned |
+| Phase 9 | Homelab Foundation |  Planned |
+| Phase 10 |  Automated Deployment | Planned |
+| Phase 11 | Ansible Automation |  Planned |
+| Phase 12 | Incus Profiles | Planned |
+| Phase 13 | K3s on Homelab | Planned |
+| Phase 14 | Content Production |  Planned |
 
 ## Separation Architecture
 
